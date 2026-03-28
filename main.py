@@ -21,7 +21,10 @@ def main():
 
                         # Send result back to LLM
                         final_response = llm.invoke(
-                            f"User asked: {query}\nTool result: {result}"
+                            f"""
+                            User asked: {query}\nTool result: {result}
+                            Explain this nicely and recommend best options
+                            """
                         )
 
                         print("Answer:", final_response.content)
