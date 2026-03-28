@@ -8,6 +8,8 @@ def main():
 
         response = llm.invoke(query)
 
+        print("Tool calls:", response.tool_calls)
+
         #  Check if tool is called
         if response.tool_calls:
             for tool_call in response.tool_calls:
@@ -30,7 +32,6 @@ def main():
                         print("Answer:", final_response.content)
         else:
             print("Answer:", response.content)
-            print("Tool calls:", response.tool_calls)
 
 
 if __name__ == "__main__":
